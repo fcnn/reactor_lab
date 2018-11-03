@@ -1,15 +1,20 @@
 buildscript {
-	ext.kotlin_version = '1.2.31'
+	ext.kotlin_version = '+'
 	repositories {
 		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+		maven { url 'https://repo.spring.io/plugins-snapshot' }
+
 	}
 	dependencies {
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+		classpath 'io.spring.gradle:dependency-management-plugin:1.0.7.BUILD-SNAPSHOT'
 	}
 }
 
 plugins {
-    id "io.spring.dependency-management" version "1.0.5.RELEASE" 
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
 }
 
 apply plugin: 'war'
@@ -27,26 +32,7 @@ dependencyManagement {
 
 group = 'com.my'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 8
-
-repositories {
-	mavenCentral()
-}
-
-
-dependencies {
-	compile('com.google.guava:guava:+')
-	compile 'io.projectreactor:reactor-core'
-	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-}
-
-defaultTasks 'run'
-mainClassName = 'com.my.demo.MainKt'
-
-task wrapper(type: Wrapper) {
-	gradleVersion = "4.7"
-    distributionType = Wrapper.DistributionType.ALL
-}
+sourceCompatibility = 11
 
 compileKotlin {
 	kotlinOptions {
@@ -59,3 +45,26 @@ compileTestKotlin {
 	}
 }
 
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+	compile('com.google.guava:guava:+')
+	compile 'io.projectreactor:reactor-core'
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+
+defaultTasks 'run'
+mainClassName = 'com.my.demo.MainKt'
+
+
+//gradle.bat wrapper --distribution-type=all --gradle-version=5.0-rc-1
+
+//task wrapper(type: Wrapper) {
+//	gradleVersion = "4.8-rc-2"
+//    distributionType = Wrapper.DistributionType.ALL
+//}
