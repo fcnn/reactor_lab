@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
-	kotlin("jvm") version "1.3.50"
+	id("org.jetbrains.kotlin.jvm") version "1.3.60"
 }
 
 group = "com.y"
@@ -14,12 +14,13 @@ repositories {
 	maven { url = uri("https://repo.spring.io/milestone") }
 	maven { url = uri("https://repo.spring.io/snapshot") }
 	maven { url = uri("https://repo.spring.io/plugins-snapshot") }
+	maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
 }
 
 dependencies {
-	implementation("com.google.guava:guava:11.0.2")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50")
+	implementation("com.google.guava:guava:+")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib")
+	//implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.60")
 	implementation("io.projectreactor:reactor-core")
 	testImplementation("io.projectreactor:reactor-test")
 }
@@ -42,6 +43,6 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.wrapper {
-	gradleVersion = "5.6.2"
+	gradleVersion = "6.0"
 	distributionType = Wrapper.DistributionType.ALL
 }
