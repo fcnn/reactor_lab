@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+	application
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.3.60"
 }
@@ -15,6 +16,10 @@ repositories {
 	maven { url = uri("https://repo.spring.io/snapshot") }
 	maven { url = uri("https://repo.spring.io/plugins-snapshot") }
 	maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+}
+
+application {
+	mainClassName="com.my.demo.MainKt"
 }
 
 dependencies {
