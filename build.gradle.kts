@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	application
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
-	id("org.jetbrains.kotlin.jvm") version "1.3.60"
+	id("org.jetbrains.kotlin.jvm") version "1.3.61"
 }
 
 group = "com.y"
