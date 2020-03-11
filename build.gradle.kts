@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	application
-	id("io.spring.dependency-management") version "1.0.8.RELEASE"
+	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.3.70"
 }
 
@@ -43,11 +43,11 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "11"
+		jvmTarget = "13"
 	}
 }
 
 tasks.wrapper {
-	gradleVersion = "6.2.1"
+	gradleVersion = "6.2.2"
 	distributionType = Wrapper.DistributionType.ALL
 }
