@@ -4,8 +4,8 @@ val gradle_version="6.3"
 
 plugins {
 	application
+	id("org.jetbrains.kotlin.jvm") version "1.3.71"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
-	id("org.jetbrains.kotlin.jvm") version "1.3.70"
 }
 
 group = "com.y"
