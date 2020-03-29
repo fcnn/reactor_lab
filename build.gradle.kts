@@ -28,8 +28,10 @@ dependencies {
 	implementation("com.google.guava:guava:+")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib")
 	//implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.60")
-	implementation("io.projectreactor:reactor-core")
-	testImplementation("io.projectreactor:reactor-test")
+	//implementation("io.projectreactor:reactor-core:3.3.5.BUILD-SNAPSHOT")
+	implementation("io.projectreactor:reactor-core:+")
+	//testImplementation("io.projectreactor:reactor-test:3.3.5.BUILD-SNAPSHOT")
+	testImplementation("io.projectreactor:reactor-test:+")
 }
 
 dependencyManagement {
