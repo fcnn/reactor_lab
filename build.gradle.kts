@@ -4,7 +4,7 @@ val gradle_version="6.4-rc-3"
 
 plugins {
 	application
-	id("org.jetbrains.kotlin.jvm") version "1.3.71"
+	id("org.jetbrains.kotlin.jvm") version "1.3.72"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 }
 
