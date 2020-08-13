@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version="6.6-rc-6"
+val gradle_version="6.6"
 
 plugins {
 	application
 	id("org.jetbrains.kotlin.jvm") version "1.4.0-rc"
-	id("io.spring.dependency-management") version "1.0.9.RELEASE"
+	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
 
 group = "com.y"
