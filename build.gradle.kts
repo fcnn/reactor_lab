@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version="6.6"
+val gradle_version="6.6.1"
 
 plugins {
 	application
-	id("org.jetbrains.kotlin.jvm") version "1.4.0-rc"
+	id("org.jetbrains.kotlin.jvm") version "1.4.0"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
 
