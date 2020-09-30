@@ -4,7 +4,7 @@ val gradle_version="6.7-rc-2"
 
 plugins {
 	application
-	id("org.jetbrains.kotlin.jvm") version "1.4.10"
+	id("org.jetbrains.kotlin.jvm") version "1.4.20-M1"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
 
@@ -17,6 +17,7 @@ repositories {
 	maven { url = uri("https://repo.spring.io/milestone") }
 	maven { url = uri("https://repo.spring.io/snapshot") }
 	maven { url = uri("https://repo.spring.io/plugins-snapshot") }
+	maven ("https://dl.bintray.com/kotlin/kotlin-eap")
 	maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
 }
 
