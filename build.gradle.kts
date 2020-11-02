@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version="6.7"
+val gradle_version="6.8-milestone-2"
 
 plugins {
 	application
-	id("org.jetbrains.kotlin.jvm") version "1.4.20-M1"
+	id("org.jetbrains.kotlin.jvm") version "1.4.20-RC"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
 
@@ -48,7 +48,7 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "14"
+		jvmTarget = "15"
 	}
 }
 
