@@ -1,16 +1,16 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version="6.8.1"
+val gradle_version="7.0-rc-1"
 
 plugins {
 	application
-	id("org.jetbrains.kotlin.jvm") version "1.4.30-RC"
+	id("org.jetbrains.kotlin.jvm") version "1.5.0-M1"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
 group = "com.y"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_15
+java.sourceCompatibility = JavaVersion.VERSION_16
 
 repositories {
 	mavenCentral()
