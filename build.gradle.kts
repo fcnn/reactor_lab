@@ -4,7 +4,7 @@ val gradle_version="7.0"
 
 plugins {
 	application
-	id("org.jetbrains.kotlin.jvm") version "1.5.0-M2"
+	id("org.jetbrains.kotlin.jvm") version "1.5.0-RC"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
@@ -28,10 +28,7 @@ application {
 dependencies {
 	implementation("com.google.guava:guava:+")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib")
-	//implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.60")
-	//implementation("io.projectreactor:reactor-core:3.3.5.BUILD-SNAPSHOT")
 	implementation("io.projectreactor:reactor-core:+")
-	//testImplementation("io.projectreactor:reactor-test:3.3.5.BUILD-SNAPSHOT")
 	testImplementation("io.projectreactor:reactor-test:+")
 }
 
