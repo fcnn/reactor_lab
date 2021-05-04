@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
     arrayOf(1,20,3,4,5).forEach { tasks.add(task(it)) }
     var ok = false
     Mono.zip(tasks) { ok = true }
-            .subscribeOn(Schedulers.elastic())
+            .subscribeOn(Schedulers.boundedElastic())
             .subscribe { println("all tasks completed!") }
 
     println("waiting for all tasks to complete ...")
