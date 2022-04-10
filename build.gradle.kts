@@ -1,3 +1,5 @@
+// D:\tools\jdk-19\bin\java -cp "bin;fat" io.vertx.core.Launcher run com.hk.activity.MainVerticle
+
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
@@ -23,8 +25,9 @@ repositories {
 	}
 }
 
+val mainClassFullName = "com.my.demo.MainKt"
 application {
-	mainClass.set("com.my.demo.MainKt")
+	mainClass.set(mainClassFullName)
 }
 
 dependencies {
@@ -48,6 +51,11 @@ tasks.withType<ShadowJar> {
   mergeServiceFiles()
 }
 
+tasks.jar {
+	manifest {
+		attributes(mapOf("Main-Class" to mainClassFullName))
+	}
+}
 
 tasks.withType<Test> {
 	useJUnitPlatform()
