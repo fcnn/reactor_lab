@@ -6,14 +6,14 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 plugins {
 	id("java")
 	application
-  	kotlin("jvm") version("1.6.20")
+  	kotlin("jvm") version("1.7.10")
 	id("com.github.johnrengelman.shadow") version "7.1.2"
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	id("io.spring.dependency-management") version "1.0.12.RELEASE"
 }
 
 group = "com.my"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_18
 
 repositories {
 	mavenCentral()
@@ -64,11 +64,11 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "17"
+		jvmTarget = "18"
 	}
 }
 
 tasks.wrapper {
-	gradleVersion = "7.4.2"
+	gradleVersion = "7.5"
 	distributionType = Wrapper.DistributionType.ALL
 }
